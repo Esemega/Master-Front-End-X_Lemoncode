@@ -1,0 +1,9 @@
+$base-color: red;
+$fonts: 'Times New Roman', monospace;
+$radius: 2px;
+$amount: 35%;
+
+@mixin shadow {
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -10px 10px 10px #252525;
+}
