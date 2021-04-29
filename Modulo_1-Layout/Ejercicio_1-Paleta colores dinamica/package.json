@@ -1,0 +1,15 @@
+{
+  "name": "color-palette-with-sass",
+  "description": "- Usar SASS\r - A partir de un color base, generar cuatro colores más oscuros y cuatro más claros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.32.11"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Sonia Garcia Alcaraz",
+  "license": "ISC"
+}
