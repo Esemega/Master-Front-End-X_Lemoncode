@@ -1,0 +1,61 @@
+@import "_text-contrast.scss";
+@import "_change-lightness.scss";
+
+
+$base-colors: #ff0000, #0000ff, #008000;
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+$number : 1;
+@each $color in $base-colors{
+    .container-#{$number}{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+        .box{
+            padding: 30px 20px;
+            margin: 0 15px;
+            border: 1px black solid;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .base-color{
+            background-color: $color;
+        }
+
+
+        .color-box-text{
+            font-weight: bold;
+            @include text-contrast($color);
+
+
+            &::after{
+                display: block;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            
+        }
+
+        .base-color .color-box-text::after{
+            content: "#{$color}";
+            
+        }
+
+        @for $i from 1 through 4 {
+            @include change-color($i, $color, "darken");
+            @include change-color($i, $color, "lighten");
+        }
+    }
+    $number: $number +1;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "themes-with-sass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.32.11"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Sonia Garcia Alcaraz",
+  "license": "ISC"
+}
