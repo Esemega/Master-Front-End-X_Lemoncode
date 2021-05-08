@@ -1,9 +1,0 @@
-$base-color: #6f00ff;
-$fonts: Arial, fantasy;
-$radius: 12px;
-$amount: 20%;
-
-@mixin shadow {
-    /* offset-x | offset-y | blur-radius | color */
-    box-shadow: 15px 15px 10px $base-color;
-}
