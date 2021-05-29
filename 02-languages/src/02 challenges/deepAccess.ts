@@ -1,4 +1,10 @@
-const myObject = {
+//types
+type Myget = <T>(obj:Object, target:string) => T;
+type Deepget = (obj:Object, ...target:string[]) => any;
+type DeepSet = (value:number, obj:Object, ...keys:string[]) => void;
+
+//input variables
+const myObject:Object = {
   a: 1,
   b: {
     c: null,
@@ -11,11 +17,12 @@ const myObject = {
   }
 };
 
-// APARTADO A
-const getTarget = (obj, target) => obj[target];
 
-const deepGet = (obj, ...targets) => {
-  let result = obj;
+// APARTADO A
+const getTarget:Myget = (obj, target) => obj[target];
+
+const deepGet:Deepget = (obj, ...targets) => {
+  let result:Object = obj;
   targets.forEach(target => result = getTarget(result, target));
   return result;
 }
@@ -30,15 +37,16 @@ console.log(deepGet(myObject));  // {a: 1, b: {...}}
 
 
 //APARTADO B
-const myObject2 = {};
+const myObject2:Object = {};
 
-const deepSet = (value, obj, ...keys) => {
+
+const deepSet:DeepSet = (value, obj, ...keys) => {
   if(keys.length === 0) return obj;
   
   const [head, ...tail] = keys;
   if(tail.length === 0) return obj[head] = value;
   
-  let newContent;
+  let newContent:Object;
   tail.forEach( element => {
     if(typeof obj[head] === "object") {
       newContent = obj[head] = {...obj[head], [element]: value};
