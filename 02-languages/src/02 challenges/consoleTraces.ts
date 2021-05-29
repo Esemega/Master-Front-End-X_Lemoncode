@@ -16,8 +16,9 @@ const run = async (triggers:Function[]) => {
     await trigger();
   }
   console.log("first");
+  console.log("************** CONSOLE TRACES *********************");
 };
 
 run(triggers);
-//forEach expects a synchronous function.
+//forEach cannot be used because expects a synchronous function.
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach

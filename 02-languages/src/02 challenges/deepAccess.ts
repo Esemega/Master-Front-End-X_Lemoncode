@@ -27,6 +27,7 @@ const deepGet:Deepget = (obj, ...targets) => {
   return result;
 }
 
+console.log("************** DEEP ACCESS *********************");
 console.log("-------- PART A --------");
 console.log(deepGet(myObject, "x")); // undefined
 console.log(deepGet(myObject, "a")); // 1

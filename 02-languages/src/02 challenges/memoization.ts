@@ -12,6 +12,7 @@ const memoizeWithoutArgs:Memoize = (fn) => {
     return () => cache ? cache : cache = fn();
 };
 
+console.log("************** MEMOIZATION *********************");
 console.log("-------- PART A --------");
 const memoized = memoizeWithoutArgs(expensiveFunction);
 console.log(memoized()); // Una única llamada // 3.1415
