@@ -1,16 +1,17 @@
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const delay = <T>(ms:number):Promise<T> => new Promise(resolve => setTimeout(resolve, ms));
 
-const showMessage = async ([time, message]) => {
+type TimeMessage = [time: number, message:string];
+const showMessage = async ([time, message]:TimeMessage) => {
   await delay(time);
   console.log(message);
 };
 
-const triggers = [
+const triggers:Function[] = [
   async () => await showMessage([200, "third"]),
   async () => await showMessage([100, "second"]),
 ];
 
-const run = async triggers => {
+const run = async (triggers:Function[]) => {
   for (const trigger of triggers) {
     await trigger();
   }
