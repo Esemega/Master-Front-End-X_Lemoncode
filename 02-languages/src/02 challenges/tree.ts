@@ -1,9 +1,49 @@
-export type TreeNodeR<T> = T | Array<TreeNodeR<T>>;
+interface Tree<T> {
+    tag: string,
+    children?: Tree<T>[],
+    text?: string
+}
 
-export const sample:TreeNodeR<number> = [1, [2, 3], [[4], [5, 6, [7, 8, [9]]]]];
-export const sample2:TreeNodeR<string> = ["1", ["2", "3"], [["4"], ["5", "6", ["7", "8", ["9"]]]]];
-export const sample3:TreeNodeR<number> = [10, [20, 30, 40, [5, 6, [7, 8, [9]]]]];
-export const sample4:TreeNodeR<Object> = [{key1: 1}, [{key2: 2},{key3: 3}], [[{key4: 4}], {key5: 5}]];
-export const sample5:TreeNodeR<boolean> = [true, [false, [false], []], true, [[[true]]]];
+const tree: Tree<string> = {
+    tag: "html",
+    children: [
+        { 
+            tag: "head",
+            children: [
+                { 
+                    tag: "title",
+                    text: "HWW - the Hello World Web "
+
+                }
+            ]
+        },
+        { 
+            tag: "body",
+            children: [
+                { 
+                    tag: "header",
+                    children: [
+                        { 
+                            tag: "nav",
+                        }
+                    ]
+                },
+                { 
+                    tag: "main",
+                    children: [
+                        { 
+                            tag: "h1",
+                            text: "HELLO WORLD"
+                        }
+                    ]
+                },
+                { 
+                    tag: "footer",
+                }
+            ]
+        }
+    ]
+}
 
 console.log("************** TREE *********************");
+console.log(tree)
