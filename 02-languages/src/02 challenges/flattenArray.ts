@@ -1,12 +1,12 @@
-type NestedArray<T> =  T | Array<NestedArray<T>>;
+type NestedArray<T> = (T | NestedArray<T>)[];
 
 const numberArray: NestedArray<number> = [1, [2, 3], [[4], [5, 6, [7, 8, [9]]]]];
 const stringArray:NestedArray<string> = ["1", ["2", "3"], [["4"], ["5", "6", ["7", "8", ["9"]]]]];
 const booleanArray:NestedArray<boolean> = [true, [false, [false]], true, [[[true]]]];
 
-const flatArray= <T>(arr: Array<NestedArray<T>>): T[]=> {
+const flatArray= <T>(arr: NestedArray<T>): T[]=> {
         return arr.reduce(
-        (result: any[], element: Array<NestedArray<T>>) =>
+        (result: any[], element: NestedArray<T>) =>
             Array.isArray(element) 
                 ? result.concat(flatArray(element)) 
                 : result.concat(element)
