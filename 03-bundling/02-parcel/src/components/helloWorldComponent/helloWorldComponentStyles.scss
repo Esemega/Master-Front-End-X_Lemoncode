@@ -1,0 +1,12 @@
+$start-color: #30CFD0;
+$finish-color: #330867;
+
+.hello-world{
+    text-transform: uppercase;
+
+    font-size: 10vw;
+    background: linear-gradient(to right, $start-color 0%, $finish-color 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
