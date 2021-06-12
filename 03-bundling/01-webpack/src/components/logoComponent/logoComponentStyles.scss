@@ -1,0 +1,33 @@
+$aubergine: #9057b1;//#614051;
+$logo-height: 100px;
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    text-transform: uppercase;
+    
+    .logo-img{
+        display: flex;
+        
+        img{
+            height: $logo-height;
+        }
+        
+        &::before{
+            content:"{";
+            font-size: $logo-height;
+        }
+
+        &::after{
+            content:"}";
+            font-size: $logo-height;
+        }
+        
+    }
+    .egg-plant{
+        color: $aubergine;
+    }
+    
+}

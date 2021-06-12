@@ -1,0 +1,9 @@
+$background-color: teal;
+
+.result-background{
+    background-color: $background-color;
+}
+
+:global(.card).custom-background{
+    background-color: darkorange;
+}
