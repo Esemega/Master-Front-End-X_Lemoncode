@@ -1,0 +1,24 @@
+@import "~@angular/material/theming";
+
+// taken from https://github.com/angular/components/blob/master/src/material/core/theming/prebuilt/deeppurple-amber.scss
+
+// Define a theme.
+$my-custom-primary: mat-palette($mat-deep-purple);
+$my-custom-accent: mat-palette($mat-amber, A200, A100, A400);
+
+$my-custom-theme: mat-light-theme(
+  (
+    color: (
+      primary: $my-custom-primary,
+      accent: $my-custom-accent,
+    ),
+  )
+);
+
+@include mat-core();
+@include angular-material-theme($my-custom-theme);
+
+// $primary-color: #673ab7;
+$primary-color: mat-color(map-get($my-custom-theme, primary));
+$accent-color: mat-color(map-get($my-custom-theme, accent));
+$space: 2rem;
