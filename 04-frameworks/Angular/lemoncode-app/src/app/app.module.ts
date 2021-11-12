@@ -15,6 +15,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { GalleryComponent } from './gallery/gallery.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PrivateMenuComponent } from './layout/private-menu/private-menu.component';
+import { PublicHeaderComponent } from './layout/public-header/public-header.component';
+import { PrivateHeaderComponent } from './layout/private-header/private-header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +31,14 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     AboutComponent,
     PublicMenuComponent,
+    GalleryComponent,
+    DashboardComponent,
+    UsersComponent,
+    ProfileComponent,
+    PrivateMenuComponent,
+    PublicHeaderComponent,
+    PrivateHeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

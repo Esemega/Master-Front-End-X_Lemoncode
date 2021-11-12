@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
+
+// Pon validaciones y mensajes de error.
+// Al hacer submit del formulario, el componente invocará al método login() del servicio Auth.
