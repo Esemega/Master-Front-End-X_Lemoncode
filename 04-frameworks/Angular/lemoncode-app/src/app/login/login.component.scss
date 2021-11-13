@@ -1,6 +1,7 @@
+@use "sass:math";
 @import "../../variables.scss";
 
 .alert {
   background: $accent-color;
-  margin: $space/2 $space 0 0;
+  margin: math.div($space, 2) $space 0 0;
 }
