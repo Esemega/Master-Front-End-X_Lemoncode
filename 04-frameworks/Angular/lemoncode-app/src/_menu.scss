@@ -1,6 +1,7 @@
 @import "variables";
 
-.menu a {
+.menu a:not(span > a),
+.menu span {
   padding: 0 $space 0 $space;
 }
 
