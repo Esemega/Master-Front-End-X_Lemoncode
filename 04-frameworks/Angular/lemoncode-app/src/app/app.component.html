@@ -1,5 +1,5 @@
-<app-public-menu></app-public-menu>
-<app-private-menu></app-private-menu>
+<app-public-header *ngIf="!(isLogged() | async)"></app-public-header>
+<app-private-header *ngIf="isLogged() | async"></app-private-header>
 
 <div class="content">
   <router-outlet></router-outlet>
