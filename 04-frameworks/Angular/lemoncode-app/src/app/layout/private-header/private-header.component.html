@@ -1,1 +1,11 @@
-<p>private-header works!</p>
+<div class="header-container">
+  <app-private-menu></app-private-menu>
+
+  <mat-nav-list class="menu">
+    <span>
+      Hola,
+      <a routerLink="/profile">{{ username }}</a>
+    </span>
+    <a (click)="logout()">Logout</a>
+  </mat-nav-list>
+</div>
