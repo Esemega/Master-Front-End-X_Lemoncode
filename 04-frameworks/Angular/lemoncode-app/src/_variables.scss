@@ -18,7 +18,14 @@ $my-custom-theme: mat-light-theme(
 @include mat-core();
 @include angular-material-theme($my-custom-theme);
 
-// $primary-color: #673ab7;
 $primary-color: mat-color(map-get($my-custom-theme, primary));
 $accent-color: mat-color(map-get($my-custom-theme, accent));
 $space: 2rem;
+
+a {
+  cursor: pointer;
+
+  &:not(.selected):hover {
+    color: $accent-color;
+  }
+}
