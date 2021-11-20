@@ -7,17 +7,56 @@
   </mat-card-content>
 </mat-card>
 
-<form>
-  <h1>Login</h1>
+<h1>Login</h1>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Username</mat-label>
-    <input matInput required />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Password</mat-label>
-    <input matInput required />
-  </mat-form-field>
+<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <div
+    class="form-container"
+    [ngClass]="{ 'has-error': f.submitted && !username.valid }"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label for="username">Username</mat-label>
+      <input
+        matInput
+        required
+        name="username"
+        type="email"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        email
+      />
+      <mat-error *ngIf="username.hasError('required')">
+        Username is required
+      </mat-error>
+      <mat-error *ngIf="username.hasError('email')">
+        Not a valid email
+      </mat-error>
+    </mat-form-field>
+  </div>
 
-  <button mat-raised-button color="primary">Login</button>
+  <div
+    class="form-container"
+    [ngClass]="{ 'has-error': f.submitted && !password.valid }"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label for="password">Password</mat-label>
+      <input
+        matInput
+        required
+        name="password"
+        type="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+      />
+      <mat-error *ngIf="!password.valid"> Password is required </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-container">
+    <button [disabled]="loading" mat-raised-button color="primary">
+      Login
+    </button>
+    <div *ngIf="loading" class="spinner"></div>
+  </div>
+  <mat-error *ngIf="error">{{ error }}</mat-error>
 </form>
