@@ -8,10 +8,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./private-header.component.scss'],
 })
 export class PrivateHeaderComponent implements OnInit {
-  username: string;
+  username: string | null = null;
 
   constructor(private router: Router, private authService: AuthService) {
-    this.username = this.authService.getUsername();
+    if (this.authService.isLogged()) {
+      this.username = this.authService.getUsername();
+    }
   }
 
   ngOnInit(): void {}
