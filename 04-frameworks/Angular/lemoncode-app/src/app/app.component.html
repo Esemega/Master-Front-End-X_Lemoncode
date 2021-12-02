@@ -1,6 +1,8 @@
 <app-public-header *ngIf="!(isLogged() | async)"></app-public-header>
 <app-private-header *ngIf="isLogged() | async"></app-private-header>
 
-<div class="content">
+<main>
   <router-outlet></router-outlet>
-</div>
+</main>
+
+<app-footer></app-footer>
