@@ -13,6 +13,8 @@ export class RotateDirective {
 
   ngOnInit(): void {
     this.el.nativeElement.style.cursor = 'pointer';
+    this.el.nativeElement.title = `Pulsa para rotar la imagen ${this.step} grados.`;
+
     this.rotate(Number(this.initialRotation));
     this.currentRotation = Number(this.initialRotation);
   }
