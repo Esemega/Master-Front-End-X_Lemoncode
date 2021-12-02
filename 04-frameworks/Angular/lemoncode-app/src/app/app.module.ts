@@ -24,6 +24,9 @@ import { PublicHeaderComponent } from './layout/public-header/public-header.comp
 import { PrivateHeaderComponent } from './layout/private-header/private-header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { RotateDirective } from './directives/rotate.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     PublicHeaderComponent,
     PrivateHeaderComponent,
     FooterComponent,
+    RotateDirective,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     MatCardModule,
     MatButtonModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
