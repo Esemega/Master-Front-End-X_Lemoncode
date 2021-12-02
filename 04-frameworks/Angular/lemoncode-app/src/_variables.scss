@@ -26,6 +26,6 @@ a {
   cursor: pointer;
 
   &:not(.selected):hover {
-    color: $accent-color;
+    text-decoration: underline;
   }
 }

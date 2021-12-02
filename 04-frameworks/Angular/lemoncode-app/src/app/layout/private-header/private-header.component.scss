@@ -1,5 +1,10 @@
 @import "../../../menu";
 
-.header-container {
+.first-row {
   display: flex;
+  justify-content: space-around;
+}
+
+img {
+  width: 6em;
 }
