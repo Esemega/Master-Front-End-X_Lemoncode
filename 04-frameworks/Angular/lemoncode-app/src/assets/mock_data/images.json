@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "src": "001.jpg",
+    "title": "Nebulosa",
+    "alt": "Cielo 3d espacio abstracto con estrellas y nebulosa",
+    "attribution": {
+      "author": "kjpargeter",
+      "url": "https://www.freepik.es/fotos/fondo"
+    }
+  },
+  {
+    "id": 2,
+    "src": "002.jpg",
+    "title": "Playa",
+    "alt": "Cielo, mar y arena",
+    "attribution": {
+      "author": "kbza",
+      "url": "https://www.freepik.es/fotos/viajes"
+    }
+  },
+  {
+    "id": 3,
+    "src": "003.jpg",
+    "title": "Campo verde",
+    "alt": "Campo verde con una oveja mirandome",
+    "attribution": {
+      "author": "wirestock",
+      "url": "https://www.freepik.es/fotos"
+    }
+  },
+  {
+    "id": 4,
+    "src": "004.jpg",
+    "title": "Campo con niebla",
+    "alt": "Sol brillando sobre el campo cubierto de niebla",
+    "attribution": {
+      "author": "rawpixel",
+      "url": "https://www.freepik.es/fotos/naturaleza"
+    }
+  },
+  {
+    "id": 5,
+    "src": "005.jpg",
+    "title": "Lago",
+    "alt": "Vista aérea de un lago de montaña al atardecer",
+    "attribution": {
+      "author": "wirestock",
+      "url": "https://www.freepik.es/fotos/"
+    }
+  },
+  {
+    "id": 6,
+    "src": "006.jpg",
+    "title": "Montañas",
+    "alt": "Paisaje montañoso con niebla cremosa otoñal",
+    "attribution": {
+      "author": "wirestock",
+      "url": "https://www.freepik.es/fotos/"
+    }
+  },
+  {
+    "id": 7,
+    "src": "007.jpg",
+    "title": "Desierto",
+    "alt": "Paisaje soleado de un cartel de tráfico amarillo en el parque estatal valle del fuego en nevada",
+    "attribution": {
+      "author": "wirestock",
+      "url": "https://www.freepik.es/fotos/naturaleza>"
+    }
+  },
+  {
+    "id": 8,
+    "src": "008.jpg",
+    "title": "Duna de arena",
+    "alt": "Dunas de arena en un desierto",
+    "attribution": {
+      "author": "wirestock",
+      "url": "https://www.freepik.es/fotos/viajes"
+    }
+  }
+]
