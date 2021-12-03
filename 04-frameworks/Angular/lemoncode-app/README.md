@@ -34,6 +34,7 @@ Navega a `http://localhost:4200/` para ver el resultado.
 
 - [Angular](https://angular.io/) - Framework JS
 - [Angular CLI](https://github.com/angular/angular-cli) - Command Line Interface de Angular
+- [Angular Marterial](https://material.angular.io/) - Componentes de Material Design para Angular
 - [Sass](https://sass-lang.com/) - Preprocesador CSS
 - [Typescript](https://www.typescriptlang.org/) - Superset de JS
 
@@ -139,7 +140,7 @@ Navega a `http://localhost:4200/` para ver el resultado.
   }
   ```
 
-- Un punto a mencionar es que no te olvides de incluir el modulo de angular-material importado dentro del `app.module.ts`:
+- Un punto a mencionar es que no hay que olvidarse de incluir el modulo de angular-material importado dentro del `app.module.ts`:
 
   ```ts
   import { NgModule } from '@angular/core';
