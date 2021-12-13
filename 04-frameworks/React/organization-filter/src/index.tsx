@@ -1,10 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { App } from "./app";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './app';
+import { OrgProvider } from './org.context';
 
 ReactDOM.render(
   <div>
-    <App />
+    <OrgProvider>
+      <App />
+    </OrgProvider>
   </div>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
