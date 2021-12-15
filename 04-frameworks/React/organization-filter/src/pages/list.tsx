@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, generatePath } from 'react-router-dom';
-import { OrgContext } from './org.context';
+import { OrgContext } from '../org.context';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -50,8 +50,9 @@ export const ListPage: React.FC = () => {
 
   return (
     <>
-      <Typography variant='h2'>Hello from List page</Typography>
-      <Typography variant='h3'>{organization.toUpperCase()}</Typography>
+      <Typography variant='h2'>
+        Members from {organization.toUpperCase()}
+      </Typography>
       <TextField
         label='Organization'
         type='text'
