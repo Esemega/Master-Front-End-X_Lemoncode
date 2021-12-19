@@ -14,6 +14,13 @@ module.exports = merge.strategy({
   resolve: {
     alias: {
       'react-dom': '@hot-loader/react-dom',
+      core: helpers.resolveFromRootPath('src/core'),
+      scenes: helpers.resolveFromRootPath('src/scenes'),
+      pods: helpers.resolveFromRootPath('src/pods'),
+      layouts: helpers.resolveFromRootPath('src/layouts'),
+      common: helpers.resolveFromRootPath('src/common'),
+      'common-app': helpers.resolveFromRootPath('src/common-app'),
+      router: helpers.resolveFromRootPath('src/router'),
     },
   },
   entry: {

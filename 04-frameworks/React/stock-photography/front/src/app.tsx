@@ -1,8 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
+import { AppRouter } from 'router/app.router';
 
 const App: React.FunctionComponent = () => {
-  return <h1>Hola Origin</h1>;
+  return <AppRouter />;
 };
 
 export default hot(App);
