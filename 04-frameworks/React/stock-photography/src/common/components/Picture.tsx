@@ -11,6 +11,7 @@ export const Picture: React.FC<Props> = props => {
   const { pictureInfo } = props;
 
   const { pictureIdList, setPictureIdList } = React.useContext(CartContext);
+  const [selectedCheck, setSelectedCheck] = React.useState(false);
 
   const handleCheckbox = e => {
     const idCheckbox = e.target.value;
@@ -27,6 +28,7 @@ export const Picture: React.FC<Props> = props => {
 
   React.useEffect(() => {
     pictureInfo.selected = pictureIdList.some(id => id === pictureInfo.id);
+    setSelectedCheck(pictureInfo.selected);
   }, [pictureIdList]);
 
   return (
@@ -41,7 +43,7 @@ export const Picture: React.FC<Props> = props => {
           id="selectedPicture"
           value={pictureInfo.id}
           onChange={handleCheckbox}
-          defaultChecked={pictureInfo.selected}
+          checked={selectedCheck}
         />
       </label>
     </li>

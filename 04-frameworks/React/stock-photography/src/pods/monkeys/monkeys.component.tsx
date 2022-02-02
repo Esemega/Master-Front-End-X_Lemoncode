@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PictureInfo } from './monkeys.vm';
-import { Picture } from './components/Picture';
+import { Picture } from 'common/components/Picture';
 
 interface Props {
   list: PictureInfo[];
