@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PictureInfo } from '../cats.vm';
+import { PictureInfo } from './picture.model';
 import { CartContext } from 'core/providers/cart.context';
 
 interface Props {
