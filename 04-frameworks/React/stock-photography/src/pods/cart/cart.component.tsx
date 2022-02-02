@@ -17,7 +17,6 @@ export const CartPictureList: React.FC<Props> = props => {
         {pictureList.map(picture => (
           <li key={picture.id}>
             <img src={picture.picUrl} alt={picture.title} width="50px" />
-            <p>Id {picture.id}</p>
             <p>{picture.title}</p>
             <button
               onClick={() => {
