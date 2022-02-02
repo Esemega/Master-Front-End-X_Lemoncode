@@ -6,6 +6,8 @@ import { CartContainer } from 'pods/cart/cart.container';
 import * as classes from './app.layout.styles';
 
 export const AppLayout: React.FC = ({ children }) => {
+  const [cartIsVisible, setCartIsVisible] = React.useState(false);
+
   return (
     <div className={classes.layout}>
       <header className={classes.header}>
@@ -13,12 +15,17 @@ export const AppLayout: React.FC = ({ children }) => {
           <Link to={switchRoutes.cats}>Gatetes</Link>
           <Link to={switchRoutes.monkeys}>Monetes</Link>
         </nav>
+        <button onClick={() => setCartIsVisible(!cartIsVisible)}>
+          {!cartIsVisible ? 'Show' : ' Hide'} cart
+        </button>
       </header>
 
       <main className={classes.main}>{children}</main>
-      <aside className={classes.sidebar}>
-        <CartContainer />
-      </aside>
+      {cartIsVisible && (
+        <aside className={classes.sidebar}>
+          <CartContainer />
+        </aside>
+      )}
 
       <footer className={classes.footer}>
         Sonia Garcia Alcaraz &copy; 2022
