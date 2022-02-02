@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { PictureInfo } from './monkeys.vm';
+import { Picture } from './components/Picture';
 
 interface Props {
   list: PictureInfo[];
@@ -12,9 +13,7 @@ export const MonkeyPictureList: React.FC<Props> = props => {
   return (
     <ul>
       {list.map(picture => (
-        <li key={picture.id}>
-          <img src={picture.picUrl} alt={picture.title} />
-        </li>
+        <Picture key={picture.id} pictureInfo={picture} />
       ))}
     </ul>
   );
