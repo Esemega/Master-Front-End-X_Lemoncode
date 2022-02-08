@@ -20,8 +20,6 @@ export const CartPictureList: React.FC<Props> = props => {
             <p>{picture.title}</p>
             <button
               onClick={() => {
-                console.log('Delete picture.id', picture.id);
-                console.log('pictureIdList', pictureIdList);
                 setPictureIdList(pictureIdList.filter(id => id !== picture.id));
               }}
             >
@@ -30,6 +28,15 @@ export const CartPictureList: React.FC<Props> = props => {
           </li>
         ))}
       </ul>
+      {Boolean(pictureIdList.length) && (
+        <button
+          onClick={() => {
+            setPictureIdList([]);
+          }}
+        >
+          Empty
+        </button>
+      )}
     </div>
   );
 };
