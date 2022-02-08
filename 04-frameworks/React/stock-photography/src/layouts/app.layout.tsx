@@ -6,7 +6,7 @@ import { CartContainer } from 'pods/cart/cart.container';
 import * as classes from './app.layout.styles';
 
 export const AppLayout: React.FC = ({ children }) => {
-  const [cartIsVisible, setCartIsVisible] = React.useState(false);
+  const [cartIsVisible, setCartIsVisible] = React.useState(true);
 
   return (
     <div className={classes.layout}>
