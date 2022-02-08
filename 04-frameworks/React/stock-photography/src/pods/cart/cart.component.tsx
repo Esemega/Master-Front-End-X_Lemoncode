@@ -12,7 +12,7 @@ export const CartPictureList: React.FC<Props> = props => {
   const { pictureIdList, setPictureIdList } = React.useContext(CartContext);
 
   return (
-    <div style={{ border: '1px solid #000' }}>
+    <div>
       <ul>
         {pictureList.map(picture => (
           <li key={picture.id}>

@@ -14,6 +14,17 @@ export const layout = css`
 
 export const header = css`
   grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+
+    a {
+      padding: 0.5em;
+    }
+  }
 `;
 
 export const main = css`
@@ -22,6 +33,21 @@ export const main = css`
 
 export const sidebar = css`
   grid-area: sidebar;
+  border-left: 1px solid black;
+  padding: 0.5em;
+
+  ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5em;
+    }
+  }
 `;
 
 export const footer = css`
