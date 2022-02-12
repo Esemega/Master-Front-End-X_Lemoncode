@@ -53,9 +53,9 @@ Navega a `http://localhost:8080/` para ver el resultado.
 - Breve explicación por carpetas:
   - En `common` podemos encontrar el componente `Picture` que ha sido promocionado al usarse en más de un pod.
   - En `core`, se encuentra el provider del `cart`, en el que comparte la lista de id que hay en el carrito.
-  - En `layout`
-  - En `pods`
-  - En `scenes` hay una escena para mostrar las fotos de los gatos y otra de los monos. Estas escenas están compuestas por el pod de los gatos o de los monos y del pod del carrito
+  - En `layout` se puede encontrar la estructura que van a tener las `scenes` compuesta por un header, un footer y el main donde irá el pod correpondiente (`cats` o `monkeys`) y un aside con el pod cart (el carrito).
+  - En `pods` hay tres pods, los pods `cats` y `monkeys`, se encargan de obtener de la api las fotos y su información y mostrarla en una lista. El pod `cart`, lee del contacto los ids que hay en el carrito y pide a la api información para mostrarla.
+  - En `scenes` hay una escena para mostrar las fotos de los gatos y otra de los monos.
 
 ## Hecho por
 
