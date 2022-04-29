@@ -1,0 +1,33 @@
+@use "sass:math";
+@import "../../variables";
+
+$quarter-space: math.div($space, 4);
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    margin: math.div($space, 2);
+  }
+
+  button {
+    margin: math.div($space, 4);
+  }
+
+  .buttons {
+    display: flex;
+  }
+  .slider {
+    display: flex;
+    img {
+      max-width: 75px;
+      margin: $quarter-space $quarter-space 0 $quarter-space;
+      cursor: pointer;
+    }
+
+    .selectedImage {
+      opacity: 0.4;
+    }
+  }
+}

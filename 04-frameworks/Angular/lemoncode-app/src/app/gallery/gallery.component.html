@@ -1,0 +1,49 @@
+<h1>Galeria</h1>
+
+<div class="container">
+  <img [src]="selectedImageSrc" [width]="size" rotate step="90" />
+  <div class="buttons">
+    <button
+      mat-button
+      color="primary"
+      (click)="previous()"
+      [disabled]="selectedImageIndex <= 0"
+    >
+      Anterior
+    </button>
+    <button
+      mat-button
+      color="primary"
+      (click)="next()"
+      [disabled]="selectedImageIndex >= imageData.length - 1"
+    >
+      Siguiente
+    </button>
+    <button mat-button color="accent" (click)="getBigger()">Aumentar</button>
+    <button mat-button color="accent" (click)="getSmaller()">Disminuir</button>
+    <button mat-button color="warn" (click)="play()" *ngIf="!isPlaying">
+      Play
+    </button>
+    <button mat-button color="warn" (click)="stop()" *ngIf="isPlaying">
+      Stop
+    </button>
+  </div>
+  <div class="slider">
+    <button mat-button (click)="previousGroup()" [disabled]="start <= 0">
+      Anterior
+    </button>
+    <img
+      *ngFor="let image of imageData | slice: start:end; index as i"
+      src="../../assets/img/{{ image.src }}"
+      (click)="setSelectedImageSrc(i + start)"
+      [class.selectedImage]="selectedImageIndex === i + start"
+    />
+    <button
+      mat-button
+      (click)="nextGroup()"
+      [disabled]="end >= imageData.length - 1"
+    >
+      Siguiente
+    </button>
+  </div>
+</div>

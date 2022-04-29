@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+@import "../../spinner";
+
+.alert {
+  display: inline-block;
+  background: $accent-color;
+}
+
+form,
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

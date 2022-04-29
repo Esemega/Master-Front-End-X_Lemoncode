@@ -1,0 +1,24 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="first-row">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png?format=400w"
+        alt="Logo de la aplicación"
+        class="logo"
+      />
+      <h1>Lemoncode app</h1>
+
+      <mat-nav-list class="menu">
+        <span>
+          Hola,
+          <a routerLink="/profile">{{ username }}</a>
+        </span>
+        <a (click)="logout()">Logout</a>
+      </mat-nav-list>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <app-private-menu></app-private-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

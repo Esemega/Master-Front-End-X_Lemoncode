@@ -1,0 +1,62 @@
+<mat-card class="alert">
+  <mat-card-content>
+    <ul>
+      <li>Username: master8@lemoncode.net</li>
+      <li>Password: 12345678</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<h1>Login</h1>
+
+<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <div
+    class="form-container"
+    [ngClass]="{ 'has-error': f.submitted && !username.valid }"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label for="username">Username</mat-label>
+      <input
+        matInput
+        required
+        name="username"
+        type="email"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        email
+      />
+      <mat-error *ngIf="username.hasError('required')">
+        Username is required
+      </mat-error>
+      <mat-error *ngIf="username.hasError('email')">
+        Not a valid email
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div
+    class="form-container"
+    [ngClass]="{ 'has-error': f.submitted && !password.valid }"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label for="password">Password</mat-label>
+      <input
+        matInput
+        required
+        name="password"
+        type="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+      />
+      <mat-error *ngIf="!password.valid"> Password is required </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-container">
+    <button [disabled]="loading" mat-raised-button color="primary">
+      Login
+    </button>
+    <div *ngIf="loading" class="spinner"></div>
+  </div>
+  <mat-error *ngIf="error">{{ error }}</mat-error>
+</form>
