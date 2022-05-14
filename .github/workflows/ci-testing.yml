@@ -3,7 +3,7 @@ name: Ci workflow
 on:
   pull_request:
     paths:
-      - '05-testing'
+      - '05-testing/**'
 
 jobs:
   ci:
