@@ -3,4 +3,6 @@ export interface CharacterEntityVm {
   picture: string;
   name: string;
   description: string;
+  episode: string[];
+  bestSentences?: string[];
 }

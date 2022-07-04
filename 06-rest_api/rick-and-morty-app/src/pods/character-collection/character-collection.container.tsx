@@ -14,12 +14,12 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  const handleCreateHotel = () => {
-    history.push(linkRoutes.createHotel);
+  const handleCreateCharacter = () => {
+    history.push(linkRoutes.createCharacter);
   };
 
   const handleEdit = (id: string) => {
-    history.push(linkRoutes.editHotel(id));
+    history.push(linkRoutes.editCharacter(id));
   };
 
   const handleDelete = async (id: string) => {
@@ -30,7 +30,7 @@ export const CharacterCollectionContainer = () => {
   return (
     <CharacterCollectionComponent
       characterCollection={characterCollection}
-      onCreateCharacter={handleCreateHotel}
+      onCreateCharacter={handleCreateCharacter}
       onEdit={handleEdit}
       onDelete={handleDelete}
     />

@@ -8,4 +8,6 @@ export const mapCharacterFromApiToVm = (
   picture: character.image,
   name: character.name,
   description: character.status,
+  episode: character.episode,
+  bestSentences: character.bestSentences,
 });

@@ -1,11 +1,11 @@
-import { ApiResponse } from './character-collection.api-model';
-// import { mockCharacterCollection } from './character-collection.mock-data';
+import { CharacterEntityApi } from './character-collection.api-model';
 
-// let characterCollection = [...mockCharacterCollection];
-const apiBaseUrl = process.env.API_BASE_URL;
+const url = '/api/characters';
 
-export const getCharacterCollection = async (): Promise<ApiResponse> => {
-  const response = await fetch(`${apiBaseUrl}/character`);
+export const getCharacterCollection = async (): Promise<
+  CharacterEntityApi[]
+> => {
+  const response = await fetch(`${url}?_page=1&_limit=20`);
   if (response.ok) {
     return await response.json();
   } else {
@@ -14,7 +14,7 @@ export const getCharacterCollection = async (): Promise<ApiResponse> => {
 };
 
 export const deleteCharacter = async (id: string): Promise<boolean> => {
-  const response = await fetch(`${apiBaseUrl}/character/${id}`, {
+  const response = await fetch(`${url}/${id}`, {
     method: 'DELETE',
   });
   return response.ok;
