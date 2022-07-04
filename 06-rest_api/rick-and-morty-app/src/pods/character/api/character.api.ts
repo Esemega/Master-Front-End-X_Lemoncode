@@ -1,27 +1,39 @@
-import { ApiResponse, CharacterEntityApi } from './character.api-model';
-import { Lookup } from 'common/models';
-import { mockCities, mockHotelCollection } from './character.mock-data';
-
-// export const getHotel = async (id: string): Promise<Hotel> => {
-//   return mockHotelCollection.find((h) => h.id === id);
-// };
+import { CharacterEntityApi } from './character.api-model';
 
 // export const getCities = async (): Promise<Lookup[]> => {
 //   return mockCities;
 // };
 
-// export const saveHotel = async (hotel: Hotel): Promise<boolean> => {
-//   return true;
-// };
+const characterListUrl = '/api/characters';
 
-const apiBaseUrl = process.env.API_BASE_URL;
-
-export const getCharacter = async (id: number): Promise<CharacterEntityApi> => {
-  console.log('id', id);
-  const response = await fetch(`${apiBaseUrl}/character/${id}`);
+export const getCharacter = async (id: string): Promise<CharacterEntityApi> => {
+  const response = await fetch(`${characterListUrl}/${id}`);
   if (response.ok) {
     return await response.json();
   } else {
     throw Error(response.statusText);
   }
+};
+
+export const saveCharacter = async (
+  character: CharacterEntityApi
+): Promise<boolean> => {
+  if (character.id) {
+    await fetch(`${characterListUrl}/${character.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(character),
+    });
+  } else {
+    await fetch(characterListUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(character),
+    });
+  }
+  return true;
 };

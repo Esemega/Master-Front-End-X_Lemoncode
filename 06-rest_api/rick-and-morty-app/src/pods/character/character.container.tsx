@@ -3,9 +3,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import * as api from './api';
 import { Character, createEmptyCharacter } from './character.vm';
 import {
-  mapHotelFromApiToVm,
-  mapHotelFromVmToApi,
   mapCharacterFromApiToVm,
+  mapCharacterFromVmToApi,
 } from './character.mappers';
 import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
@@ -15,7 +14,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     createEmptyCharacter()
   );
   // const [cities, setCities] = React.useState<Lookup[]>([]);
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const history = useHistory();
 
   // const handleLoadCityCollection = async () => {
@@ -35,15 +34,15 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     // handleLoadCityCollection();
   }, []);
 
-  // const handleSave = async (hotel: Hotel) => {
-  //   const apiHotel = mapHotelFromVmToApi(hotel);
-  //   const success = await api.saveHotel(apiHotel);
-  //   if (success) {
-  //     history.goBack();
-  //   } else {
-  //     alert('Error on save hotel');
-  //   }
-  // };
+  const handleSave = async (character: Character) => {
+    const apiCharacter = mapCharacterFromVmToApi(character);
+    const success = await api.saveCharacter(apiCharacter);
+    if (success) {
+      history.goBack();
+    } else {
+      alert('Error on save character');
+    }
+  };
 
-  return <CharacterComponent character={character} />;
+  return <CharacterComponent character={character} onSave={handleSave} />;
 };

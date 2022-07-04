@@ -3,6 +3,8 @@ export interface Character {
   name: string;
   specie: string;
   origin: string;
+  episode: string[];
+  bestSentences?: string[];
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -10,4 +12,6 @@ export const createEmptyCharacter = (): Character => ({
   name: '',
   specie: '',
   origin: '',
+  episode: [''],
+  bestSentences: [''],
 });
