@@ -5,29 +5,59 @@ import {
   SelectComponent,
   RatingComponent,
 } from 'common/components';
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
+import { BestSentences } from './components/bestSentences.component';
 
 interface Props {
   character: Character;
   onSave: (character: Character) => void;
+  onAdd: () => void;
+  onDelete: (id: string) => void;
+  bestSentenceInput: string;
+  setBestSentenceInput: (sentence: string) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
+  const {
+    character,
+    onSave,
+    onAdd,
+    onDelete,
+    bestSentenceInput,
+    setBestSentenceInput,
+  } = props;
 
   return (
     <Formik
       onSubmit={onSave}
-      initialValues={character}
+      initialValues={{ ...character, bestSentenceInput }}
       enableReinitialize={true}
     >
       {() => (
         <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="origin" label="Origin" />
-          <TextFieldComponent name="specie" label="specie" />
+          <Typography gutterBottom variant="h2" component="h1">
+            {character?.name}
+          </Typography>
+          <TextFieldComponent
+            name="bestSentenceInput"
+            label="Best Sentence"
+            value={bestSentenceInput}
+            onChange={(e) => setBestSentenceInput(e.target.value)}
+          />
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={onAdd}
+            className={classes.button}
+          >
+            Add
+          </Button>
+          <BestSentences
+            arrayData={character.bestSentences}
+            onDelete={onDelete}
+          />
           <Button type="submit" variant="contained" color="primary">
             Save
           </Button>

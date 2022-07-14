@@ -1,3 +1,5 @@
+import { Lookup } from 'common/models';
+
 export interface CharacterEntityApi {
   id: number;
   name: string;
@@ -11,7 +13,7 @@ export interface CharacterEntityApi {
   episode: string[];
   url: string;
   created: string;
-  bestSentences?: string[];
+  bestSentences?: Lookup[];
 }
 
 interface NameAndUrl {

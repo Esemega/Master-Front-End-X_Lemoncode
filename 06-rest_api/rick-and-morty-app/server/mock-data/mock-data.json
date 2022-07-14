@@ -140,7 +140,21 @@
         "https://rickandmortyapi.com/api/episode/51"
       ],
       "url": "https://rickandmortyapi.com/api/character/2",
-      "created": "2017-11-04T18:50:21.651Z"
+      "created": "2017-11-04T18:50:21.651Z",
+      "bestSentences": [
+        {
+          "id": "001",
+          "name": "Wow... What a world."
+        },
+        {
+          "id": "002",
+          "name": "You're talking about Inception?"
+        },
+        {
+          "id": "003",
+          "name": "Holy cow, Rick! I didn't know hanging out with you was making me smarter!"
+        }
+      ]
     },
     {
       "id": 3,
@@ -203,7 +217,17 @@
         "https://rickandmortyapi.com/api/episode/51"
       ],
       "url": "https://rickandmortyapi.com/api/character/3",
-      "created": "2017-11-04T19:09:56.428Z"
+      "created": "2017-11-04T19:09:56.428Z",
+      "bestSentences": [
+        {
+          "id": "001",
+          "name": "Ok... But Not Because You Told Me To"
+        },
+        {
+          "id": "002",
+          "name": "You're Not The Cause Of Your Parents' Misery, You're Just A Symptom Of It."
+        }
+      ]
     },
     {
       "id": 4,

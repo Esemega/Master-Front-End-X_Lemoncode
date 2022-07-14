@@ -8,11 +8,22 @@ import {
 } from './character.mappers';
 import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
+import { BestSentences } from './components/bestSentences.component';
 
+const getMax = (arr: Lookup[]) => {
+  let maxValue =
+    arr?.length > 0
+      ? arr.reduce((a, b) => Math.max(a, Number(b.id)), -Infinity)
+      : 0;
+
+  return maxValue + 1;
+};
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(
     createEmptyCharacter()
   );
+  const [bestSentenceInput, setBestSentenceInput] = React.useState<string>('');
+
   // const [cities, setCities] = React.useState<Lookup[]>([]);
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
@@ -31,6 +42,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     if (id) {
       handleLoadCharacter();
     }
+    console.log('bestSentences', character.bestSentences);
     // handleLoadCityCollection();
   }, []);
 
@@ -44,5 +56,35 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     }
   };
 
-  return <CharacterComponent character={character} onSave={handleSave} />;
+  const handleAdd = () => {
+    const newSentence: Lookup = {
+      id: String(getMax(character.bestSentences)).padStart(3, '0'),
+      name: bestSentenceInput,
+    };
+    setCharacter({
+      ...character,
+      bestSentences: character.bestSentences
+        ? [...character.bestSentences, newSentence]
+        : [newSentence],
+    });
+    setBestSentenceInput('');
+  };
+
+  const handleDelete = (idToDelete: string) => {
+    const newBestSentences = character.bestSentences.filter(
+      (sentence) => sentence.id !== idToDelete
+    );
+    setCharacter({ ...character, bestSentences: newBestSentences });
+  };
+
+  return (
+    <CharacterComponent
+      character={character}
+      onSave={handleSave}
+      onAdd={handleAdd}
+      onDelete={handleDelete}
+      bestSentenceInput={bestSentenceInput}
+      setBestSentenceInput={setBestSentenceInput}
+    />
+  );
 };

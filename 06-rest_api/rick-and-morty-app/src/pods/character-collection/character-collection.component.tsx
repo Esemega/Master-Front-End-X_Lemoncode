@@ -3,18 +3,26 @@ import Button from '@material-ui/core/Button';
 import { CharacterEntityVm } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
+import { Lookup } from 'common/models';
 
 interface Props {
   characterCollection: CharacterEntityVm[];
   onCreateCharacter: () => void;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
+  getRandomSentence: (bestSentences: Lookup[]) => string;
 }
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterCollection, onCreateCharacter, onEdit, onDelete } = props;
+  const {
+    characterCollection,
+    onCreateCharacter,
+    onEdit,
+    onDelete,
+    getRandomSentence,
+  } = props;
 
   return (
     <div className={classes.root}>
@@ -29,6 +37,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
               character={character}
               onEdit={onEdit}
               onDelete={onDelete}
+              getRandomSentence={getRandomSentence}
             />
           </li>
         ))}

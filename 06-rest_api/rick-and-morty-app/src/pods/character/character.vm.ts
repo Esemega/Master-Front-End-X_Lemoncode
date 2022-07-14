@@ -1,17 +1,25 @@
+import {
+  Lookup,
+  createEmptyLookup,
+  NameAndUrl,
+  createEmptyNameAndUrl,
+} from 'common/models';
+
 export interface Character {
   id: string;
   name: string;
   specie: string;
-  origin: string;
+  origin: NameAndUrl;
   episode: string[];
-  bestSentences?: string[];
+  bestSentences?: Lookup[];
+  bestSentenceInput?: string;
 }
 
 export const createEmptyCharacter = (): Character => ({
   id: '',
   name: '',
   specie: '',
-  origin: '',
+  origin: createEmptyNameAndUrl(),
   episode: [''],
-  bestSentences: [''],
+  bestSentences: [createEmptyLookup()],
 });

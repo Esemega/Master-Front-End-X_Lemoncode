@@ -8,14 +8,17 @@ export const mapCharacterFromApiToVm = (
   id: `${character.id}`,
   name: character.name,
   specie: character.species,
-  origin: character.origin.name,
+  origin: character.origin,
   episode: character.episode,
 });
 
 export const mapCharacterFromVmToApi = (
   character: viewModel.Character
-): apiModel.CharacterEntityApi =>
-  ({
-    ...character,
-    bestSentences: character.bestSentences,
-  } as unknown as apiModel.CharacterEntityApi);
+): apiModel.CharacterEntityApi => {
+  const { bestSentenceInput, specie, ...newCharacter } = character;
+  return {
+    ...newCharacter,
+    species: specie,
+    bestSentences: newCharacter.bestSentences,
+  } as unknown as apiModel.CharacterEntityApi;
+};
